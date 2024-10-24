@@ -3,7 +3,7 @@ import React from 'react'
 import MainButton from '../../components/MainButton'
 export default function Home({navigation}) {
   const handleClick = () =>{
-    navigation.push('Tabs')
+    navigation.navigate('Tabs')
   }
   return (
     <View style = {styles.container}>
