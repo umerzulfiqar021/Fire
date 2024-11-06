@@ -1,13 +1,18 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import MainButton from '../../../components/MainButton'
+import { loginAction, logoutAction } from '../../../store/userActions'
 const Profile = () => {
   const isSignedIn = useSelector(state => state.userData.isSignedIn)
 const userName = useSelector(state => state.userData.userName)
-
+  const dispatch = useDispatch()
   return (
-    <View>
+    <View style = {styles.container}>
       <Text>Profile</Text>
+
+      <MainButton title='Login' onPress={()=>dispatch(loginAction( ))}/>
+        <MainButton title='Logout' onPress={()=> dispatch(logoutAction())}/>
       {
   isSignedIn ? (
     <View> 
@@ -28,4 +33,10 @@ const userName = useSelector(state => state.userData.userName)
 
 export default Profile
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container:{
+    flex:1,
+    alignItems: 'center',
+    justifyContent: 'center'
+  }
+})
