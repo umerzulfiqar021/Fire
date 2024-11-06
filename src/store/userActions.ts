@@ -1,27 +1,29 @@
+import { Change_Name, Login, Logout, Old } from "./types"
+
 export const loginAction = () => {
     return{
-        type:'Login',
+        type: Login,
         payload: true
     
     }
 }
 export const logoutAction = () => {
     return{
-        type:'Logout',
+        type:Logout,
         payload: false
     
     }
 }
 export const updateNameAction = (userName: string) => {
     return{
-        type:'Change_Name',
+        type: Change_Name,
         payload: userName
     
     }
 }
 export const OldAction = () => {
     return{
-        type:'Old',
+        type: Old,
         
     
     }
