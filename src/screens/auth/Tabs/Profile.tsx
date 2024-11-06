@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import MainButton from '../../../components/MainButton'
-import { loginAction, logoutAction } from '../../../store/userActions'
+import { loginAction, logoutAction,updateNameAction,OldAction } from '../../../store/userActions'
 const Profile = () => {
   const isSignedIn = useSelector(state => state.userData.isSignedIn)
 const userName = useSelector(state => state.userData.userName)
@@ -13,6 +13,8 @@ const userName = useSelector(state => state.userData.userName)
 
       <MainButton title='Login' onPress={()=>dispatch(loginAction( ))}/>
         <MainButton title='Logout' onPress={()=> dispatch(logoutAction())}/>
+          <MainButton title='Change Name' onPress={()=>dispatch(updateNameAction('Yahaya Shahid'))}/>
+            <MainButton title='Previous Name' onPress={()=> dispatch(OldAction())}/>
       {
   isSignedIn ? (
     <View> 

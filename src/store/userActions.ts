@@ -19,3 +19,10 @@ export const updateNameAction = (userName: string) => {
     
     }
 }
+export const OldAction = () => {
+    return{
+        type:'Old',
+        
+    
+    }
+}
