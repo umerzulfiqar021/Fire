@@ -1,15 +1,20 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import MainButton from '../../../components/MainButton'
 import { loginAction, logoutAction,updateNameAction,OldAction } from '../../../store/userActions'
 import { RootState } from '../../../store/store'
-const Profile = () => {
+const Profile = ({navigation}) => {
 //   const isSignedIn = useSelector(state => state.userData.isSignedIn)
 // const userName = useSelector((state : RootState) => state.userData.userName) //rootstate for getting recomendation
 const {isSignedIn,userName} = useSelector((state : RootState) => state.userData) //rootstate for getting recomendation
 //here we destructure this  
 const dispatch = useDispatch()
+useEffect(()=>{
+  if(!isSignedIn){
+    navigation.navigate('Home')
+  }
+},[isSignedIn,navigation])
   return (
     <View style = {styles.container}>
       <Text>Profile</Text>
@@ -27,6 +32,7 @@ const dispatch = useDispatch()
       <Text> user name is {userName}</Text>
       </View>
   ) : (
+    
     <View>
       <Text>Please login first {userName}</Text>
       </View>
