@@ -5,9 +5,11 @@ import MainButton from '../../../components/MainButton'
 import { loginAction, logoutAction,updateNameAction,OldAction } from '../../../store/userActions'
 import { RootState } from '../../../store/store'
 const Profile = () => {
-  const isSignedIn = useSelector(state => state.userData.isSignedIn)
-const userName = useSelector((state : RootState) => state.userData.userName) //rootstate for getting recomendation
-  const dispatch = useDispatch()
+//   const isSignedIn = useSelector(state => state.userData.isSignedIn)
+// const userName = useSelector((state : RootState) => state.userData.userName) //rootstate for getting recomendation
+const {isSignedIn,userName} = useSelector((state : RootState) => state.userData) //rootstate for getting recomendation
+//here we destructure this  
+const dispatch = useDispatch()
   return (
     <View style = {styles.container}>
       <Text>Profile</Text>
