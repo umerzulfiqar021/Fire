@@ -3,9 +3,10 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import MainButton from '../../../components/MainButton'
 import { loginAction, logoutAction,updateNameAction,OldAction } from '../../../store/userActions'
+import { RootState } from '../../../store/store'
 const Profile = () => {
   const isSignedIn = useSelector(state => state.userData.isSignedIn)
-const userName = useSelector(state => state.userData.userName)
+const userName = useSelector((state : RootState) => state.userData.userName) //rootstate for getting recomendation
   const dispatch = useDispatch()
   return (
     <View style = {styles.container}>
