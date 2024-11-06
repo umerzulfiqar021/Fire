@@ -14,7 +14,7 @@ const dispatch = useDispatch()
     
   }
   return (
-    <View style = {styles.container} className="mt-8 px-2">
+    <View style = {styles.container} >
       <Text>Home</Text>
 <MainButton  title='Go to Tabs' onPress={handleClick}/>
 {
