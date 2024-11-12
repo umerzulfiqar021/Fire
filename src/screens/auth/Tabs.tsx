@@ -12,7 +12,7 @@ import Tiktok from './Tabs/Tiktok'
 const Tabs = () => {
     const Tabs = createBottomTabNavigator()
   return (
-   <Tabs.Navigator initialRouteName='Profile'
+   <Tabs.Navigator initialRouteName='Reels'
    screenOptions={{tabBarShowLabel: false,
       tabBarActiveTintColor: 'black',
       tabBarInactiveTintColor: 'grey'

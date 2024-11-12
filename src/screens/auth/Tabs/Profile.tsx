@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import MainButton from '../../../components/MainButton'
 import { loginAction, logoutAction,updateNameAction,OldAction } from '../../../store/userActions'
 import { RootState } from '../../../store/store'
+
 const Profile = ({navigation}) => {
 //   const isSignedIn = useSelector(state => state.userData.isSignedIn)
 // const userName = useSelector((state : RootState) => state.userData.userName) //rootstate for getting recomendation
