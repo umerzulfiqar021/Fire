@@ -10,11 +10,11 @@ const Profile = ({navigation}) => {
 const {isSignedIn,userName} = useSelector((state : RootState) => state.userData) //rootstate for getting recomendation
 //here we destructure this  
 const dispatch = useDispatch()
-useEffect(()=>{
-  if(!isSignedIn){
-    navigation.navigate('Home')
-  }
-},[isSignedIn,navigation])
+// useEffect(()=>{
+//   if(!isSignedIn){
+//     navigation.navigate('SignInInput')
+//   }
+// },[isSignedIn,navigation])
   return (
     <View style = {styles.container}>
       <Text>Profile</Text>

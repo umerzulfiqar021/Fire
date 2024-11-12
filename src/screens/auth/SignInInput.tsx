@@ -5,7 +5,9 @@ import { useForm,Controller } from 'react-hook-form'
 import MainButton from '../../components/MainButton'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { signUp } from '../../constants/schemas/loginschema'
-const SignInInput = () => {
+import { loginAction } from '../../store/userActions'
+import { useDispatch, useSelector } from 'react-redux'
+const SignInInput = ({navigation}) => {
     const {
         control,
         handleSubmit,
@@ -15,11 +17,14 @@ const SignInInput = () => {
         resolver: yupResolver (signUp)
       })
       const submit = (data: any) => {
-        console.log(data,'jvv');
+        // console.log(data,'jvv');
         
-        Alert.alert(JSON.stringify(data));
-        reset();
+        // Alert.alert(JSON.stringify(data));
+        // reset();
+        dispatch(loginAction( ))
+    navigation.navigate('Tabs')
       }
+      const dispatch = useDispatch()
   return (
     <View style = {styles.container}>
        
@@ -57,3 +62,7 @@ const styles = StyleSheet.create({
     },
   
 })
+
+function dispatch(arg0: any) {
+  throw new Error('Function not implemented.')
+}

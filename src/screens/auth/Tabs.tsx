@@ -8,14 +8,18 @@ import Tiktok from './Tabs/Tiktok'
 const Tabs = () => {
     const Tabs = createBottomTabNavigator()
   return (
-   <Tabs.Navigator initialRouteName='Profile'>
+   <Tabs.Navigator initialRouteName='Profile'
+   screenOptions={{}}
+   >
     <Tabs.Screen
     name='Profile'
     component={Profile}
+    options={{headerShown:false}}
     />
     <Tabs.Screen
     name='Setting'
     component={Tiktok}
+    options={{headerShown:false}}
     // options={{tabBarIcon: ()=>{
     //     <Image
     //     source={require('src\assets\icons\tik-tok.png')}
@@ -25,6 +29,7 @@ const Tabs = () => {
     <Tabs.Screen
     name='Reels'
     component={Reels}
+    options={{headerShown:false}}
 
     />
    </Tabs.Navigator>
