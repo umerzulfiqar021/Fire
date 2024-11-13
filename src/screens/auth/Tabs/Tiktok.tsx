@@ -2,8 +2,8 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { useSelector } from 'react-redux'
 const Tiktok = () => {
-  const isSignedIn = useSelector(state => state.userData.isSignedIn)
-const userName = useSelector(state => state.userData.userName)
+  const isSignedIn = useSelector(state => state.counter.isSignedIn);
+  const userName = useSelector(state => state.counter.userName);
   return (
     <View style = {styles.container}>
       <Text>Tiktok</Text>

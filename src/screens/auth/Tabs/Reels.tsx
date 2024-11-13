@@ -2,11 +2,11 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import { logoutAction } from '../../../store/userActions';
+import {  logoutAction } from '../../../store/counterSlice'
 
 const Reels = () => {
-  const isSignedIn = useSelector(state => state.userData.isSignedIn);
-  const userName = useSelector(state => state.userData.userName);
+  const isSignedIn = useSelector(state => state.counter.isSignedIn);
+  const userName = useSelector(state => state.counter.userName);
   const dispatch = useDispatch();
 
   return (
